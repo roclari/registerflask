@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R_SYS | Registro: Setor</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div>
+        <div>
+            <h1>Registrar novo setor</h1>
+            <form method="post" action="/criar_setor" class="form">
+                <label for="nome">Nome:</label><br>
+                <input type="text" id="nome" name="nome" placeholder="Insira o nome do novo setor" required><br><br>
+                <button type="submit">Confirmar registro</button>
+            </form>
+            <div>
+                <a href="/"><button>Página Inicial</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

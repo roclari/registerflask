@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R_SYS | Funcionários</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div>
+        <div>
+            <h1>Funcionários</h1>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <ul class="flashes">
+                {% for category, message in messages %}
+                <li class="flash-{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+            <ul class="lista">
+                {% for funcionario in funcionarios %}
+                <li>{{ funcionario[1] }} {{ funcionario[2] }}</li>
+                {% endfor %}
+            </ul>
+            <a href="{{ url_for('novo_funcionario') }}"><button>Adicionar novo funcionário</button></a><br>
+            <div>
+                <a href="/"><button>Página Inicial</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

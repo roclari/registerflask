@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R_SYS | Cargos</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div>
+        <div>
+            <h1>Cargos</h1>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <ul class="flashes">
+                {% for category, message in messages %}
+                <li class="flash-{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+            <ul class="lista">
+                {% for cargo in cargos %}
+                <li>{{ cargo[1] }}</li>
+                {% endfor %}
+            </ul>
+            <a href="{{ url_for('novo_cargo') }}"><button>Adicionar novo cargo</button></a><br>
+            <div>
+                <a href="/"><button>Página Inicial</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

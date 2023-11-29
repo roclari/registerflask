@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R_SYS | Registro: Funcionário</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div>
+        <div>
+            <h1>Registrar novo funcionário</h1>
+            <form action="{{ url_for('criar_funcionario') }}" method="post" class="form">
+                <label for="primeiro_nome">Primeiro nome:</label><br>
+                <input type="text" id="primeiro_nome" name="primeiro_nome" required placeholder="Insira o primeiro nome"><br><br>
+
+                <label for="sobrenome">Sobrenome:</label><br>
+                <input type="text" id="sobrenome" name="sobrenome" required placeholder="Insira o sobrenome" ><br><br>
+
+                <label for="data_admissao">Data de admissão:</label><br>
+                <input type="date" id="data_admissao" name="data_admissao" required><br><br>
+
+                <label for="status_funcionario">Funcionário ativo:</label>
+                <input type="checkbox" id="status_funcionario" name="status_funcionario"><br><br>
+
+                <label for="id_setor">Setor:</label><br>
+                <select id="id_setor" name="id_setor" required>
+                    {% for setor in setores %}
+                    <option value="{{ setor[0] }}">{{ setor[1] }}</option>
+                    {% endfor %}
+                </select><br><br>
+                <button type="submit">Confirmar registro</button>
+            </form>
+            <div>
+                <a href="/"><button>Página Inicial</button></a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

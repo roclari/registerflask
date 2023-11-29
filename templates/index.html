@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R_SYS</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div>
+        <div>
+            <h1>R_SYS | Sistema de Registros</h1>
+            <h5>Escolha uma categoria para registro:</h5>
+            <div>
+                <a href="{{ url_for('cargos') }}"><button>CARGO</button></a>
+                <a href="{{ url_for('funcionarios') }}"><button>FUNCIONÁRIO</button></a>
+                <a href="{{ url_for('setores') }}"><button>SETOR</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
